@@ -2,14 +2,23 @@
 
 def solution(cards1, cards2, goal):
     answer = 'Yes'
-    for a in range(len(cards1)-1):
-        if goal.index(cards1[a+1])<goal.index(cards1[a]):
-            answer='No'  
-    for b in range(len(cards2)-1):
-        if goal.index(cards2[b+1])<goal.index(cards2[b]):
-            answer='No'
-    return answer
+    A=[]
+    B=[]
+    
+    for i in range(len(goal)):
+        if goal[i] in cards1:
+            A.append(goal[i])
+        elif goal[i] in cards2:
+            B.append(goal[i])
 
-A=solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"])
-B=solution(["i", "water", "drink"],["want", "to"],["i", "want", "to", "drink", "water"])
-print(A,B)
+    if len(A)>1:
+        for a in range(len(A)):
+            if cards1[a]!=A[a]:
+                answer='No'
+    
+    if len(B)>1:
+        for b in range(len(B)-1):
+            if cards2[b]!=B[b]:
+                answer='No'
+
+    return answer
