@@ -15,18 +15,12 @@ def solution(wallpaper):
         else:
             answer[1]+=1
 
-    answer[2]=answer[0]
     for c in range(answer[0],len(wallpaper)):
         if "#" in wallpaper[c]:
-            answer[2]+=1
-        else:
-            break
+            answer[2]=c+1
 
-    answer[3]=answer[1]
     for d in range(answer[1],len(wallpaper[0])):
         if "#" in [D[d] for D in wallpaper]:
-            answer[3]+=1
-        else:
-            break
+            answer[3]=d+1
     
     return answer
