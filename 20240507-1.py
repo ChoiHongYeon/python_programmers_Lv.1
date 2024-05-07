@@ -1,4 +1,4 @@
-# 기사단원의 무기https://school.programmers.co.kr/learn/courses/30/lessons/136798?language=python3)
+# 기사단원의 무기(https://school.programmers.co.kr/learn/courses/30/lessons/136798?language=python3)
 
 def solution(number, limit, power):
     answer = 0
