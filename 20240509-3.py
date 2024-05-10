@@ -2,28 +2,32 @@
 
 def solution(H):
     answer = 0
-   
-    for i in range(len(H)):
+    h = len(H)
+    for i in range(h):
         if i >= 0 and i + 3 <= len(H):
             if H[i] == 1 and H[i + 1] == 2 and H[i + 2] == 3 and H[i + 3] == 1:
                 answer += 1
-                for i in range(4):
+                for j in range(4):
                     H.pop(i)
-        elif i >= 1 and i + 2 <= len(H):
+                H.insert(0,0)
+        if i >= 1 and i + 2 <= len(H):
             if H[i - 1] == 1 and H[i] == 2 and H[i + 1] == 3 and H[i + 2] == 1:
                 answer += 1
-                for i in range(4):
+                for j in range(4):
                     H.pop(i - 1)
-        elif i >= 2 and i + 1 <= len(H):
+                H.insert(0,0)
+        if i >= 2 and i + 1 <= len(H):
             if H[i - 2] == 1 and H[i - 1] == 2 and H[i] == 3 and H[i + 1] == 1:
                 answer += 1
-                for i in range(4):
+                for j in range(4):
                     H.pop(i - 2)
-        elif i >= 3 and i <= len(H):
+                H.insert(0,0)
+        if i >= 3 and i <= len(H):
             if H[i - 3] == 1 and H[i - 2] == 2 and H[i - 1] == 3 and H[i] == 1:
                 answer += 1
-                for i in range(4):
+                for j in range(4):
                     H.pop(i - 3)
+                H.insert(0,0)
    
     return answer
    
